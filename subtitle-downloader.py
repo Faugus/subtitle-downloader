@@ -17,12 +17,33 @@ from PyQt6.QtWidgets import (
 )
 from PyQt6.QtGui import QIcon
 from PyQt6.QtCore import Qt
+from pathlib import Path
 
+class PathManager:
+    @staticmethod
+    def user_config(*relative_paths):
+        xdg_config_home = Path(os.getenv('XDG_CONFIG_HOME', Path.home() / '.config'))
+        return str(xdg_config_home.joinpath(*relative_paths))
+
+    @staticmethod
+    def get_icon(icon_name):
+        icon_paths = [
+            PathManager.user_data('icons', icon_name),
+            PathManager.system_data('icons/hicolor/256x256/apps', icon_name),
+            PathManager.system_data('icons', icon_name)
+        ]
+        for path in icon_paths:
+            if Path(path).exists():
+                return path
+        return icon_paths[-1]
 
 class SubtitleDownloader(QWidget):
-    CONFIG_DIR = os.path.expanduser("~/.config/subtitle-downloader")
-    CONFIG_FILE = os.path.join(CONFIG_DIR, "config.ini")
-    ICON_FILE = "/usr/share/icons/hicolor/256x256/apps/subtitle-downloader.png"
+    IS_FLATPAK = 'FLATPAK_ID' in os.environ or os.path.exists('/.flatpak-info')
+    CONFIG_FILE = PathManager.user_config('subtitle-downloader/config.ini')
+    if IS_FLATPAK:
+        ICON_FILE = PathManager.get_icon('io.github.Faugus.subtitle-downloader.png')
+    else:
+        ICON_FILE = PathManager.get_icon('subtitle-downloader.png')
 
     LANGUAGES = {
         'eng': 'English',

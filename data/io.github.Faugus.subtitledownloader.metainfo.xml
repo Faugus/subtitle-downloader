@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.Faugus.subtitle-downloader</id>
+  <name>Subtitle Downloaderr</name>
+  <developer_name>Faugus</developer_name>
+  <summary>Download subtitles for movies and tv shows from Open Subtitles</summary>
+  <url type="homepage">https://github.com/Faugus/subtitle-downloader</url>
+  <url type="donation">https://ko-fi.com/faugus</url>
+  <url type="bugtracker">https://github.com/Faugus/subtitle-downloader/issues</url>
+  <project_license>MIT</project_license>
+  <metadata_license>CC0-1.0</metadata_license>
+  <branding>
+    <color type="primary" scheme_preference="light">#5588A3</color>
+    <color type="primary" scheme_preference="dark">#00334E</color>
+  </branding>
+  <description>
+    <ul>
+      <li>Download subtitles for movies and tv shows from Open Subtitles</li>
+    </ul>
+  </description>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+  </content_rating>
+  <launchable type="desktop-id">io.github.Faugus.subtitle-downloader.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/Faugus/subtitle-downloader/0cf3b56/screenshot.png</image>
+      <caption>Main window</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.0.0-1" date="2026-01-11">
+      <description>
+        <ul>
+          <li>Inicial release</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

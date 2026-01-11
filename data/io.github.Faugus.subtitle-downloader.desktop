@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Subtitle Downloader
+Exec=subtitle-downloader %f
+MimeType=video/mp4;video/x-matroska;video/x-msvideo;video/x-flv;video/webm;video/quicktime;video/x-ms-wmv;
+Icon=io.github.Faugus.subtitle-downloader
+Categories=Utility;
+

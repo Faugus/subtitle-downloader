@@ -1,8 +1,6 @@
 flatpak_build = get_option('flatpak_build')
 
-icon_name = flatpak_build ? \
-  'io.github.Faugus.subtitle-downloader.png' : \
-  'subtitle-downloader.png'
+icon_name = flatpak_build ? 'io.github.Faugus.subtitle-downloader.png' : 'subtitle-downloader.png'
 
 install_data(
   'subtitle-downloader.png',
